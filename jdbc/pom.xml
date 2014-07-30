@@ -1,0 +1,90 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.hyweb</groupId>
+    <artifactId>jdbc</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <name>jdbc</name>
+    <url>http://maven.apache.org</url>
+
+    <licenses>
+        <license>
+            <name>HaiyunWeb</name>
+            <url>http://www.haiyunweb.com</url>
+            <distribution>haiyun</distribution>
+            <comments>maventestproject</comments>
+        </license>
+    </licenses>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.author>[-Jishuli/Jishujian.]</project.author>
+    </properties>
+
+    <build>
+        <resources>
+            <resource>
+                <!--<targetPath>${basedir}/src/main/resources/databaseconfig</targetPath>-->
+                <directory>${basedir}/src/main/resources/databaseconfig</directory>
+                <filtering>true</filtering>
+                <includes>
+                    <include>db.properties</include>
+                </includes>
+            </resource>
+            <resource>
+                <directory>src/main/resources/i18n</directory>
+                <includes>
+                    <include>*.properties</include>
+                </includes>
+            </resource>
+            <resource>
+                <directory>src/main/logconfig</directory>
+                <includes>
+                    <include>*.xml</include>
+                </includes>
+            </resource>
+        </resources>
+    </build>
+
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>3.8.1</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.26</version>
+        </dependency>
+    </dependencies>
+
+    <profiles>
+        <profile>
+            <id>developer</id>
+            <properties>
+                <my.author>author:Jishuli</my.author>
+                <url>jdbc:mysql://localhoat:3306</url>
+                <user>root</user>
+                <password>1234</password>
+            </properties>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+
+        <profile>
+            <id>production</id>
+            <properties>
+                <my.author>Jishujian....////</my.author>
+                <url>jdbc:mysql://mysql.haiyunweb.com:3306</url>
+                <user>root-hy</user>
+                <password>-/ro.@4952.$w^RL</password>
+            </properties>
+        </profile>
+
+    </profiles>
+</project>
