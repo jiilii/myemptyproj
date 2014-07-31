@@ -13,6 +13,8 @@ import java.util.ResourceBundle;
 public class Main {
     public static void main(String[] args) {
         test2();
+        Add a = (x,y) -> x +y;
+
 
     }
 
@@ -20,8 +22,6 @@ public class Main {
 
         ResourceBundle rb = ResourceBundle.getBundle("res", Locale.getDefault());
         System.out.println(rb.getString("bbb"));
-
-
 
     }
 

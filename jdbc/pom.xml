@@ -63,10 +63,10 @@
     </dependencies>
 
     <profiles>
+        <!--开发环境下的配置，默认配置-->
         <profile>
             <id>developer</id>
             <properties>
-                <my.author>author:Jishuli</my.author>
                 <url>jdbc:mysql://localhoat:3306</url>
                 <user>root</user>
                 <password>1234</password>
@@ -75,11 +75,10 @@
                 <activeByDefault>true</activeByDefault>
             </activation>
         </profile>
-
+        <!--生产环境下的配置-->
         <profile>
             <id>production</id>
             <properties>
-                <my.author>Jishujian....////</my.author>
                 <url>jdbc:mysql://mysql.haiyunweb.com:3306</url>
                 <user>root-hy</user>
                 <password>-/ro.@4952.$w^RL</password>
